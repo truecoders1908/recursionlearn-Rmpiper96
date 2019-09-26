@@ -10,18 +10,20 @@ namespace recursionLearn
 
             Console.WriteLine(Factorial(5));
             Console.WriteLine(Factorial(10));
+            Console.WriteLine(Counting(40));
+            Console.WriteLine(Counting(70));
 
         }
 
-        static int Factorial(int n)
+        static int Factorial(int n) // defining 'Factorial'
         {
             if (n == 0)
             {
-                return 1;
+                return 1; //just returns 1 if n == 0
             }
 
             // recursive solution (as opposed to iterative)
-            return n * Factorial(n - 1);
+            return n * Factorial(n - 1); // takes n, multiplies it by n - 1, UNTIL n == 0.
 
             // e.g.
             // 5! = 5 * 4!
@@ -30,6 +32,13 @@ namespace recursionLearn
             //    2! = 2 * 1!
             //     1! = 1 * 0!
             //      0! = 1 (because math)
+        }
+        static int Counting(int c)
+        {
+            if (c == 0)
+                return 0;
+            Console.WriteLine(c);
+            return Counting(c - 1);
         }
     }
 }
